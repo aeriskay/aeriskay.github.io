@@ -546,8 +546,8 @@ function updatePositions() {
 
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollPosition / 1250) + (i % 5));
-    items[i].style.Transform = "translateX(" + (items[i].basicLeft + 300 * phase) + "px)";
-    //items[i].style.left = items[i].basicLeft + 200 * phase + 'px';
+    //items[i].style.WebkitTransform = "translateX(" + (items[i].basicLeft + 200 * phase) + "px)";
+    items[i].style.left = items[i].basicLeft + 200 * phase + 'px';
   }
 
   /*function updatePositions() {
