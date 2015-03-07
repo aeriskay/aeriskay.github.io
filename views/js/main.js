@@ -479,8 +479,6 @@ var resizePizzas = function(size) {
     }
   }
 
-
-
   changePizzaSizes(size);
 
   // User Timing API is awesome
