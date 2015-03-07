@@ -5,7 +5,6 @@ jank-free at 60 frames per second.
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
 
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
@@ -447,26 +446,6 @@ var resizePizzas = function(size) {
 
     return dx;
   }
-
-
-  // Removed excessive looping that calls on DOM
-  /*function changePizzaSizes(size) {
-    var dx = determineDx(document.querySelectorAll(".randomPizzaContainer"), size);
-    var newwidth = (document.querySelectorAll(".randomPizzaContainer").offsetWidth + dx) + 'px';
-    var allPizzaContainers = document.querySelectorAll(".randomPizzaContainer").length;
-    var randomPizzaContainerCount = document.querySelectorAll(".randomPizzaContainer").length;
-    for (var i = 0; i < randomPizzaContainerCount; i++){
-      allPizzaContainer[i].style.width - newwidth;
-    }
-  }*/
-
-  /*function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-    }
-  }*/
 
   // Iterates through pizza elements on the page and changes their widths
   // Removed excessive looping that calls on DOM
