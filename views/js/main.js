@@ -460,24 +460,26 @@ var resizePizzas = function(size) {
     }
   }*/
 
-  function changePizzaSizes(size) {
+  /*function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
       var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
-  }
+  }*/
 
   // Iterates through pizza elements on the page and changes their widths
   // Removed excessive looping that calls on DOM
   function changePizzaSizes(size) {
-    var dx = determineDx(pizzaContainers[0], size);
+    var dx = determineDx(allPizzaContainers[0], size);
     var newwidth = (allPizzaContainers[0].offsetWidth + dx) + 'px';
     var allPizzaContainers = document.querySelectorAll(".randomPizzaContainer");
     for (var i = 0; i < allPizzaContainers.length; i++) {
       allPizzaContainers[i].style.width = newwidth;
     }
   }
+
+
 
   changePizzaSizes(size);
 
