@@ -460,13 +460,13 @@ var resizePizzas = function(size) {
     }
   }*/
 
+  // Removed excessive looping that calls on DOM
   function changePizzaSizes(size) {
-    // Remove excessive calls to DOM elements and inefficient calculations from loop
-    var pizzaContainers = document.querySelectorAll(".randomPizzaContainer");
     var dx = determineDx(pizzaContainers[0], size);
-    var newwidth = (pizzaContainers[0].offsetWidth + dx) + "px";
-    for (var i = 0; i < pizzaContainers.length; i++) {
-      pizzaContainers[i].style.width = newwidth;
+    var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+    var allPizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+    for (var i = 0; i < allPizzaContainers.length; i++) {
+      allPizzaContainers[i].style.width = newwidth;
     }
   }
 
@@ -542,23 +542,10 @@ function updatePositions() {
 
   var scrollPosition = latestKnownScrollY;
 
-  //var scrollPosition = document.body.scrollTop;
-
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollPosition / 1250) + (i % 5));
-    //items[i].style.WebkitTransform = "translateX(" + (items[i].basicLeft + 200 * phase) + "px)";
     items[i].style.left = items[i].basicLeft + 200 * phase + 'px';
   }
-
-  /*function updatePositions() {
-  frame++;
-  window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  }*/
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
