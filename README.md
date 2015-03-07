@@ -1,3 +1,23 @@
+## Running the file
+
+1. Click this link http://aeriskay.github.io/ or
+
+2. Download or clone the repository 
+2.1 from https://github.com/aeriskay/aeriskay.github.io
+2.2 Ensure that all files are on your computer 2.3 Open the index.html file on your browser
+
+## Changes made to improve performance
+
+Index.html
+1. Inline minified CSS style
+2. Added async attribute to js scripts 
+3. Reposition js scripts to the bottom of the code
+4. Resize pizzeria image and profile image
+
+views/main.js
+1. On changePizzaSizes function, moved variable declarations out of the looping so that it does not take too long for the loop to compute. Not necessary to keep delcaring the variables
+2. On updatePositions function, used requestAnimationFrame function to improve performance. Referred to http://www.html5rocks.com/en/tutorials/speed/animations
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
